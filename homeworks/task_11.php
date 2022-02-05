@@ -24,7 +24,7 @@
                 <div id="panel-1" class="panel">
                     <div class="panel-hdr">
                         <h2>
-                            Задание 10
+                            Задание 11
                         </h2>
                         <div class="panel-toolbar">
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
@@ -35,15 +35,22 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <?php if(isset($_SESSION['message'])):?>
+                                        
+                                    <?php if(isset($_SESSION['message'])):?>    
                                         <div class="alert alert-danger fade show" role="alert">
                                             <?php echo $_SESSION['message'];?>
                                         </div>
                                         <?php unset($_SESSION['message']);?>
                                     <?php endif;?>
-                                    <form action="controllers/controller_10.php" method="post">
-                                        <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" name="text" id="simpleinput" class="form-control">
+                                    
+                                    <form action="controllers/task_11_handler.php" method="post">
+                                        <div class="form-group">
+                                        	<label class="form-label" for="simpleinput">Email</label>
+                                        <input type="text" name="email" id="simpleinput" class="form-control">
+                                        </div>
+
+                                        <label class="form-label" for="simpleinput">Password</label>
+                                        <input type="password" name="password" id="simpleinput" class="form-control">
                                         <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>

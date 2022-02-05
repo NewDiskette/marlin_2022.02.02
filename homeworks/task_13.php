@@ -1,4 +1,8 @@
-<?php session_start();?>
+<?php
+    session_start();
+    if(!isset($_SESSION['count']))
+    $_SESSION['count'] = 0;
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,7 +28,7 @@
                 <div id="panel-1" class="panel">
                     <div class="panel-hdr">
                         <h2>
-                            Задание 10
+                            Задание 13
                         </h2>
                         <div class="panel-toolbar">
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
@@ -35,15 +39,10 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <?php if(isset($_SESSION['message'])):?>
-                                        <div class="alert alert-danger fade show" role="alert">
-                                            <?php echo $_SESSION['message'];?>
-                                        </div>
-                                        <?php unset($_SESSION['message']);?>
-                                    <?php endif;?>
-                                    <form action="controllers/controller_10.php" method="post">
-                                        <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" name="text" id="simpleinput" class="form-control">
+                                    <div class="alert alert-info fade show" role="alert">
+                                        Кнопка была нажата: <b><?php echo $_SESSION['count'];?></b> раз
+                                    </div>
+                                    <form action="controllers/task_13_handler.php" method="post">
                                         <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>
