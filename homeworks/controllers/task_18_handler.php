@@ -30,4 +30,4 @@ for($i= 0; $i < $count; $i++){
     $statement = $pdo->prepare($sql);
     $statement->execute();
 }
-// header('Location: ../task_18.php');
+header('Location: ../task_18.php');
